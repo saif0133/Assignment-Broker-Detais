@@ -1,10 +1,22 @@
+// index.tsx
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
-import App from './App.tsx'
+import WelcomePage from './WelcomePage.tsx'
+import BrokerDetails from './brokerDetails.tsx'
+import { ThemeProvider } from '@mui/material/styles'
+import theme from './theme.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
+     <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/broker-details" element={<BrokerDetails />} />
+      </Routes>
+    </BrowserRouter>
+    </ThemeProvider>
+  </StrictMode>
 )
