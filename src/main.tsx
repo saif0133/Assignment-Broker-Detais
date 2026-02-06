@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import WelcomePage from './WelcomePage.tsx'
-import BrokerDetails from './brokerDetails.tsx'
+import BrokerDetails from './BrokerDetails.tsx'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from './theme.ts'
 

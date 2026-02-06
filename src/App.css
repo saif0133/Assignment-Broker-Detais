@@ -1,28 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-family: 'Arial', sans-serif;
+  --welcome-margin-top: 50px;
+
+  --title-font-size: 3.5rem;
+  --subtitle-font-size: 1rem;
+
+  --title-color: #333;
+  --subtitle-color: #666;
+
+  --subtitle-margin: 20px 0;
+  width: 100vw ;
 }
 
-.welcome{
+.welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  
-  margin-top: 50px; 
+  margin-top: var(--welcome-margin-top);
 }
 
 .welcome h1 {
-  font-size: 3.5rem;
-  color: #333;
-  margin: 0 0 0 0;
+  font-size: var(--title-font-size);
+  color: var(--title-color);
+  margin: 0;
 }
+
 .welcome h3 {
-  font-size: 1rem;
-  color: #666;
-  margin: 20px 0;
+  font-size: var(--subtitle-font-size);
+  color: var(--subtitle-color);
+  margin: var(--subtitle-margin);
 }

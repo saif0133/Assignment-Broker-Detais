@@ -1,0 +1,246 @@
+.Broker-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #dbd9d9;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.broker-box {
+    width: 80%;
+    overflow: hidden;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.box-header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #3e97b5;
+    padding: 3%;
+    color: white;
+}
+
+.box-footer {
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    background-color: #3e97b5;
+}
+
+.devider {
+
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+.user-img {
+    width: 90%;
+    height: 70%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5%;
+}
+
+.user-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background-position: center;
+}
+
+.box-content {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    box-sizing: border-box;
+}
+
+.left {
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+}
+
+.right {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.exit-button{
+    color:white;
+}
+.exit-button:hover{
+    cursor: pointer;
+    color:#093b60;
+    transition: all 0.3s ease;
+}
+
+.personal-info {
+    font-size: xx-large;
+    width: 100%;
+    margin: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.personal-info .user-name{
+    line-spacing: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.personal-info .user-company{
+    line-spacing: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #666;
+    font-size: x-large;
+    font-weight: lighter;
+}
+
+.contact-info{
+    box-sizing: border-box;
+    width: 95% !important;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    height: 100%;
+    text-align: left;
+}
+
+.contact-info {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+
+
+.contact-info .email {
+    display: flex;
+  justify-content: flex-start;
+  width: 50%;
+height: 100%;
+}
+
+.contact-info .phone-number {
+    display: flex;
+    
+  justify-content: flex-start; 
+    width: 50%;
+    height: 100%;
+}
+
+
+
+.title{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 3%;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.body{
+    font-size: large;
+    font-weight: bold;
+}
+.body:hover{
+    color:#3e97b5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email , .phone-number{
+    display: flex;
+    gap: 10px;
+    
+}
+
+.card{
+    background-color: #f4f4f4;
+    padding: 2%;
+    transition: all 0.3s ease;
+
+}
+
+.user-status{
+    width: 90%;
+     background-color: green;
+     display: flex;
+     justify-content: space-between;
+     padding: 2px;
+     box-sizing: border-box;
+     align-items: center;   
+     border-radius: 5px;
+     overflow: hidden;
+         transition: all 0.3s ease-in-out;
+
+}
+.user-status:hover{
+    cursor: pointer;
+    background-color: #093b60;
+    transition: all 0.3s ease-in-out;
+}
+
+.status-indicator{
+   
+    padding: 3%;
+    color: white;
+    border-radius: 5px;
+    font-size: xx-large;
+    font-weight: bold;
+
+}
+
+.status-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+    font-size: xx-large;
+}
+
+.card:hover{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+}

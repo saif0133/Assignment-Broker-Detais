@@ -11,14 +11,14 @@ function WelcomePage() {
   
 <div className='welcome'>
   <img src={Welcome} alt="welcome" width="50%" />
-  <h1>  welcome Hiring Team
+  <h1>  Welcome Hiring Team
 </h1>
 <h3 style={{ width: "50%" }}>
-  We’re glad to have you here.
+  I'm glad to have you here.
   This demo showcases the Broker Details interface using clean code and simple UX.
   Feel free to explore the components and data presentation.
 </h3>
-   <Button onClick={() => navigate('/broker-details')} variant="contained"  size="medium"
+   <Button onClick={() => navigate('/broker-details')} variant="contained"  size="large"
     >
           View Broker Details
         </Button>
