@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-     "postbuild": "cpx \"src/_redirects\" dist/ && cpx \"./src/pages/BrokerDetails/BrokerDetails.tsx\" dist/ && cpx \"./src/pages/WelcomePage/WelcomePage.tsx\" dist/",
+    "postbuild": "cpx \"src/_redirects\" dist/",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
