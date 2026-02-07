@@ -79,22 +79,21 @@ All data is loaded from a local JSON file (src/data/broker.json).
 ## UI States
 The following UI states are implemented clearly:
 
-Loading State
+- Loading State
 
-Displayed on initial load
+- Displayed on initial load
 
-Simulated with a delay (500ms)
+- Simulated with a delay (500ms)
 
-Implemented as a reusable component
+- Implemented as a reusable component
 
+- Error State
 
-Error State
+- Displays a default message if no custom error is provided
 
-Displays a default message if no custom error is provided
+- Includes a Retry button
 
-Includes a Retry button
-
-Optional error simulation for demonstration
+- Optional error simulation for demonstration
 
 ## UX Principles Applied
 Clarity & Simplicity: Only essential information is displayed to avoid visual clutter.
