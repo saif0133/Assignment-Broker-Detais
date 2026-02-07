@@ -1,6 +1,13 @@
 import brokerDataRaw from "../data/broker.json";
 
 
+export class EmptyDataError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "EmptyDataError";
+  }
+}
+
 
 export interface BrokerData {
   name: string;
@@ -10,9 +17,9 @@ export interface BrokerData {
   status: string;
   image?: string;
 }
-
 export const getBrokerData = async (): Promise<BrokerData> => {
   try {
+    // throw new Error("Unexpected error"); test fetch error
     const data: any = brokerDataRaw;
 
     const isEmpty =
@@ -24,13 +31,13 @@ export const getBrokerData = async (): Promise<BrokerData> => {
       !data.phone ||
       !data.status;
 
-    if (isEmpty) {
-      throw new Error("Data is empty or incomplete");
+    if (isEmpty || Object.keys(data).length === 0) {
+      throw new EmptyDataError("Data is empty");
     }
 
     return data as BrokerData;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching broker data:", error);
-    throw new Error("Failed to fetch broker data"); 
+    throw error instanceof EmptyDataError ? error : new Error("Unknown error");
   }
 };

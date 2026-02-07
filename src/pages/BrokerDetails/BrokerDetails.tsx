@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import UserDetails from '../../Components/userdetails/UserDetails.tsx';
 import './BrokerDetails.css';
-import { getBrokerData } from "../../api/methods.ts";
+import { getBrokerData, EmptyDataError } from "../../api/methods.ts";
 import LoadingBackdrop from "../../Components/LoadingBackdrop/LoadingBackdrop.tsx";
 import ErrorPage from "../../Components/Error/ErrorPage.tsx";
 
@@ -12,6 +12,7 @@ function BrokerDetails() {
     const [PhoneNumber, setPhoneNumber] = useState("");
     const [Status, setStatus] = useState("");
     const [pic, setPic] = useState("");
+    const [retry, SetRetry] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [reload, setReload] = useState(false);
@@ -25,7 +26,7 @@ function BrokerDetails() {
             setError(null);
 
             try {
-                
+
                 await new Promise(resolve => setTimeout(resolve, 500));
 
                 if (!isMounted) return;
@@ -35,11 +36,9 @@ function BrokerDetails() {
 
                 if (!isMounted) return;
 
-                if (!data) {
-                    throw new Error("No broker data found");
-                }
 
-                
+
+
                 setName(data.name);
                 setCompany(data.company);
                 setEmail(data.email);
@@ -51,12 +50,20 @@ function BrokerDetails() {
                     : `https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=3e97b5&color=fff&rounded=false&size=1080`;
                 setPic(avatarUrl);
 
+                if (!data || Object.keys(data).length === 0) {
+                    SetRetry("Reload");
+                    throw new Error("No broker data found");
+                }
             } catch (err) {
-                if (!isMounted) return;
 
+                if (err instanceof EmptyDataError) {
+                    setError("No broker data available");
+                    SetRetry("Reload");
                 
-
-                setError(err instanceof Error ? err.message : "Something went wrong");
+                } else {
+                    setError("Something went wrong");
+                    SetRetry("Retry");
+                }
             } finally {
                 if (isMounted) {
                     setLoading(false);
@@ -73,7 +80,7 @@ function BrokerDetails() {
     }, [reload]);
 
     if (error) {
-        return <ErrorPage message={error} onRefresh={() => { setReload(!reload); }} />;
+        return <ErrorPage type={retry} message={error} onRefresh={() => { setReload(!reload); }} />;
     }
 
 

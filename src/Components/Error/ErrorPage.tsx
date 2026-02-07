@@ -5,9 +5,10 @@ import './ErrorPage.css';
 interface Props {
   onRefresh: () => void;
   message?: string;
+  type: string;
 }
 
-function ErrorPage({ onRefresh, message }: Props) {
+function ErrorPage({ onRefresh, message, type }: Props) {
 
 return (
 <div className='error'>
@@ -16,7 +17,7 @@ return (
   {message ? <p>{message}</p> :<p>Something went wrong.</p>}
   <Button onClick={onRefresh} variant="contained"  size="large"
     >
-          Please try again
+          {type}
         </Button>
         </div>
 );

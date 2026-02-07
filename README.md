@@ -89,6 +89,8 @@ Implemented as a reusable component
 
 - Error State
 
+- Empty State
+
 - Displays a default message if no custom error is provided
 
 - Includes a Retry button
