@@ -73,7 +73,7 @@ function BrokerDetails() {
     }, [reload]);
 
     if (error) {
-        return <ErrorPage onRefresh={() => { setReload(!reload); }} />;
+        return <ErrorPage message={error} onRefresh={() => { setReload(!reload); }} />;
     }
 
 

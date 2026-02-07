@@ -63,7 +63,7 @@ function UserDetails({
                                     <div className='title'>
 
                                         Email:</div>
-                                    <div className='body'>{Email}</div>
+                                    <div className='body'> <a href={`mailto:${Email}`}>{Email}</a></div>
                                 </div>
                             </div>
                             <Divider variant="fullWidth" orientation="vertical" style={{ margin: "10px" }} />
@@ -74,7 +74,7 @@ function UserDetails({
                                     <div className="title">
 
                                         Mobile:</div>
-                                    <div className='body'>{PhoneNumber}</div>
+                                    <div className='body'><a href={`tel:${PhoneNumber}`}>{PhoneNumber}</a></div>
                                 </div>
                             </div>
 

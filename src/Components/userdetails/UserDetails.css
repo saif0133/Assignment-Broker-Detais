@@ -242,6 +242,10 @@
     background-color: var(--color-primary-dark);
 }
 
+a{
+    text-decoration: none !important;
+    color: inherit !important;
+}
 
 /* Mobile */
 @media (max-width: 575px) {
