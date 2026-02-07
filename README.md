@@ -85,7 +85,7 @@ The following UI states are implemented clearly:
 
 - Simulated with a delay (500ms)
 
-- Implemented as a reusable component
+Implemented as a reusable component
 
 - Error State
 
@@ -96,33 +96,33 @@ The following UI states are implemented clearly:
 - Optional error simulation for demonstration
 
 ## UX Principles Applied
-Clarity & Simplicity: Only essential information is displayed to avoid visual clutter.
+- Clarity & Simplicity: Only essential information is displayed to avoid visual clutter.
 
-Visual Hierarchy: Important data such as the broker name and status is emphasized using size, spacing, and color.
+- Visual Hierarchy: Important data such as the broker name and status is emphasized using size, spacing, and color.
 
-Consistency: Unified spacing, colors, and typography across components.
+- Consistency: Unified spacing, colors, and typography across components.
 
-System Feedback: Clear loading, error, and empty states keep users informed.
+- System Feedback: Clear loading, error, and empty states keep users informed.
 
-Error Recovery: Retry and reload actions help users recover smoothly.
+- Error Recovery: Retry and reload actions help users recover smoothly.
 
 
 ## Extra UX Enhancements
 
-A welcome page was added specifically for the hiring team as an optional UX enhancement, providing a clear entry point to the main Broker Details page.
+- A welcome page was added specifically for the hiring team as an optional UX enhancement, providing a clear entry point to the main Broker Details page.
 
-Optional Avatar Handling:
+- Optional Avatar Handling:
 When no profile image is available (as per the assignment requirements), an avatar is generated using the first letter of the broker’s first and last name.
 This approach helps break visual monotony and adds a subtle visual identity without relying on real images.
 
 
 ## Assumptions
 
-All data in this project is mock/demo data.
+- All data in this project is mock/demo data.
 
-No backend or database is used.
+- No backend or database is used.
 
-TypeScript (TSX) was used for better type safety while following standard React (JavaScript) principles.
+- TypeScript (TSX) was used for better type safety while following standard React (JavaScript) principles.
 
 
 ----Thank you for your time and review.----
