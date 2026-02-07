@@ -1,0 +1,50 @@
+@import "../../Styles/variables.css";
+
+.errorImg {
+
+    width: 30%;
+
+}
+
+.error{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.error h1{
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    margin: 20px 0;
+    margin: 0;
+}
+
+.error p{
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin: 20px 0;
+}
+
+@media (max-width:600px) {
+    .error h1{
+        font-size: 2.5rem;
+        color: var(--color-primary);
+        margin: 20px 0;
+        margin: 0;
+    }
+
+    .error p{
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        margin: 20px 0;
+    }
+
+    .errorImg {
+        width: 80%;
+    }
+    
+}

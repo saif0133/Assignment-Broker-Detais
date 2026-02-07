@@ -14,58 +14,68 @@ function BrokerDetails() {
     const [pic, setPic] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [reload, setReload] = useState(false);
 
     useEffect(() => {
-        let wait = true;
+        let isMounted = true;
+        const abortController = new AbortController();
 
+        const fetchData = async () => {
+            setLoading(true);
+            setError(null);
 
-        const initialTimer = setTimeout(() => {
-            if (wait) {
-                const fetchData = async () => {
-                    setLoading(true);
-                    setError(null);
+            try {
+                
+                await new Promise(resolve => setTimeout(resolve, 500));
 
-                    try {
-                        const data = await getBrokerData();
-                        if (!wait) return; // Prevent state updates if unmounted
+                if (!isMounted) return;
 
-                        if (!data) throw new Error("No broker data found");
-                        setName(data.name);
-                        setCompany(data.company);
-                        setEmail(data.email);
-                        setPhoneNumber(data.phone);
-                        setStatus(data.status);
-                        if (!data.image) {
-                            setPic(`https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=3e97b5&color=fff&rounded=false&size=1080`);
-                        } else {
-                            setPic(data.image);
-                        }
-                    } catch (err: unknown) {
-                        if (wait) {
-                            setError(err instanceof Error ? err.message : "Something went wrong");
-                        }
-                    } finally {
-                        if (wait) {
-                            setLoading(false);
-                        }
-                    }
-                };
+                const data = await getBrokerData();
+                console.log("Fetched broker data:", data);
 
-                fetchData();
+                if (!isMounted) return;
+
+                if (!data) {
+                    throw new Error("No broker data found");
+                }
+
+                
+                setName(data.name);
+                setCompany(data.company);
+                setEmail(data.email);
+                setPhoneNumber(data.phone);
+                setStatus(data.status);
+
+                const avatarUrl = data.image
+                    ? data.image
+                    : `https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=3e97b5&color=fff&rounded=false&size=1080`;
+                setPic(avatarUrl);
+
+            } catch (err) {
+                if (!isMounted) return;
+
+                
+
+                setError(err instanceof Error ? err.message : "Something went wrong");
+            } finally {
+                if (isMounted) {
+                    setLoading(false);
+                }
             }
-        }, 2000);
+        };
 
+        fetchData();
 
         return () => {
-            wait = false;
-            clearTimeout(initialTimer);
+            isMounted = false;
+            abortController.abort();
         };
-    }, []);
+    }, [reload]);
 
+    if (error) {
+        return <ErrorPage onRefresh={() => { setReload(!reload); }} />;
+    }
 
-  if (error) {
-    return <ErrorPage onRefresh={()=>console.log("test")} />;
-  }
 
 
     return (
