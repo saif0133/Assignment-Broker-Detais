@@ -60,9 +60,9 @@ src/
 └── App.css
 ```
 ## Features
-Broker Details Page
+- Broker Details Page
 
-Displays broker information in a clean UI card:
+- Displays broker information in a clean UI card:
 
 Name
 
@@ -74,7 +74,7 @@ Phone
 
 Status (Active / Inactive)
 
-All data is loaded from a local JSON file (src/data/broker.json).
+* All data is loaded from a local JSON file (src/data/broker.json).
 
 ## UI States
 The following UI states are implemented clearly:
