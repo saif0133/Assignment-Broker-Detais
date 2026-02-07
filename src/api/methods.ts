@@ -19,7 +19,7 @@ export interface BrokerData {
 }
 export const getBrokerData = async (): Promise<BrokerData> => {
   try {
-    // throw new Error("Unexpected error"); test fetch error
+    // throw new Error("Unexpected error"); // Test fetch error
     const data: any = brokerDataRaw;
 
     const isEmpty =
