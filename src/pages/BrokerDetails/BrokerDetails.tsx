@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import UserDetails from '../../Components/userdetails/UserDetails.tsx';
 import './BrokerDetails.css';
 import { getBrokerData } from "../../api/methods.ts";
-import LoadingBackdrop from "../LoadingBackdrop/LoadingBackdrop.tsx";
+import LoadingBackdrop from "../../Components/LoadingBackdrop/LoadingBackdrop.tsx";
 
 function BrokerDetails() {
     const [Name, setName] = useState("");
