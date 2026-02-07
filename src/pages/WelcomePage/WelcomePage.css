@@ -1,59 +1,62 @@
 :root {
-  font-family: 'Arial', sans-serif;
-  --welcome-margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+    --welcome-margin-top: 50px;
 
-  --title-font-size: 3.5rem;
-  --subtitle-font-size: 1rem;
+    --title-font-size: 3.5rem;
+    --subtitle-font-size: 1rem;
 
-  --mobile-title-font-size: 2.5rem;
-  --mobile-subtitle-font-size: 0.9rem;
+    --mobile-title-font-size: 2.5rem;
+    --mobile-subtitle-font-size: 0.9rem;
 
-  --title-color: #333;
-  --subtitle-color: #666;
+    --title-color: #333;
+    --subtitle-color: #666;
 
-  --subtitle-margin: 20px 0;
-  width: 100vw ;
+    --subtitle-margin: 20px 0;
+    width: 100vw;
 }
 
 .welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: var(--welcome-margin-top);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: var(--welcome-margin-top);
 }
 
 .welcome h1 {
-  font-size: var(--title-font-size);
-  color: var(--title-color);
-  margin: 0;
+    font-size: var(--title-font-size);
+    color: var(--title-color);
+    margin: 0;
 }
 
 .welcome h3 {
-  font-size: var(--subtitle-font-size);
-  color: var(--subtitle-color);
-  margin: var(--subtitle-margin);
-  width: 50%;
+    font-size: var(--subtitle-font-size);
+    color: var(--subtitle-color);
+    margin: var(--subtitle-margin);
+    width: 50%;
+    max-width: 600px;
 }
 
 
-@media (max-width: 575px) {
+@media (max-width: 600px) {
 
-.welcome h1 {
-  font-size: var(--mobile-title-font-size);
-  color: var(--title-color);
-  margin: 0;
-}
-.welcome h3 {
-  font-size: var(--mobile-subtitle-font-size);
-  color: var(--subtitle-color);
-  margin: var(--subtitle-margin);
-  width: 80%;
-}
+    .welcome h1 {
+        font-size: var(--mobile-title-font-size);
+        color: var(--title-color);
+        margin: 0;
+    }
 
-.welcome img{
-    width: 100%;
-}
+    .welcome h3 {
+        font-size: var(--mobile-subtitle-font-size);
+        color: var(--subtitle-color);
+        margin: var(--subtitle-margin);
+        width: 80%;
+        max-width: 90%;
+    }
+
+    .welcome img {
+        width: 100%;
+    }
 
 }
