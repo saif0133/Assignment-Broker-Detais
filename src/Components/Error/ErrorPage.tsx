@@ -17,7 +17,7 @@ return (
   {message ? <p>{message}</p> :<p>Something went wrong.</p>}
   <Button onClick={onRefresh} variant="contained"  size="large"
     >
-          {type}
+          {type?type:"Retry"}
         </Button>
         </div>
 );
