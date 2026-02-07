@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "postbuild": "cpx \"src/_redirects\" dist/",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
