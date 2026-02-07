@@ -13,7 +13,7 @@ function WelcomePage() {
   <img src={Welcome} alt="welcome" width="50%" />
   <h1>  Welcome Hiring Team
 </h1>
-<h3 style={{ width: "50%" }}>
+<h3 >
   I'm glad to have you here.
   This demo showcases the Broker Details interface using clean code and simple UX.
   Feel free to explore the components and data presentation.

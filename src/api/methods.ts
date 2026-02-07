@@ -1,4 +1,4 @@
-import brokerData from "../data/broker.json";
+import brokerDataRaw from "../data/broker.json";
 
 export interface BrokerData {
   name: string;
@@ -10,15 +10,25 @@ export interface BrokerData {
 }
 
 export const getBrokerData = async (): Promise<BrokerData> => {
-  const data: BrokerData = brokerData;
+  try {
+    const data: any = brokerDataRaw;
 
-  const isEmpty =
-    data == null ||
-    (typeof data === "object" && Object.keys(data).length === 0);
+    const isEmpty =
+      !data ||
+      typeof data !== "object" ||
+      !data.name ||
+      !data.company ||
+      !data.email ||
+      !data.phone ||
+      !data.status;
 
-  if (isEmpty) {
-    throw new Error("Data is empty");
+    if (isEmpty) {
+      throw new Error("Data is empty or incomplete");
+    }
+
+    return data as BrokerData;
+  } catch (error) {
+    console.error("Error fetching broker data:", error);
+    throw new Error("Failed to fetch broker data"); 
   }
-
-  return data;
 };

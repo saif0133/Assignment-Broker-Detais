@@ -3,6 +3,7 @@ import UserDetails from '../../Components/userdetails/UserDetails.tsx';
 import './BrokerDetails.css';
 import { getBrokerData } from "../../api/methods.ts";
 import LoadingBackdrop from "../../Components/LoadingBackdrop/LoadingBackdrop.tsx";
+import ErrorPage from "../../Components/Error/ErrorPage.tsx";
 
 function BrokerDetails() {
     const [Name, setName] = useState("");
@@ -62,14 +63,10 @@ function BrokerDetails() {
     }, []);
 
 
-    if (error) {
-        return (
-            <div className="error-container">
-                <div className="error-message">Error: {error}</div>
-                <button onClick={() => window.location.reload()}>Retry</button>
-            </div>
-        );
-    }
+  if (error) {
+    return <ErrorPage onRefresh={()=>console.log("test")} />;
+  }
+
 
     return (
         <>
