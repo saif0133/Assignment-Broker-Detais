@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import './App.css'
-import Welcome from './assets/welcome.gif'
+import './WelcomePage.css'
+import Welcome from '../../assets/welcome.gif'
 import Button from '@mui/material/Button'
 
 function WelcomePage() {

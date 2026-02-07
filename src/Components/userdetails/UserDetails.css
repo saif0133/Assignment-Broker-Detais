@@ -36,7 +36,7 @@
 
 .box-footer {
     width: 100%;
-    height: 20%;
+    height: 5%;
     box-sizing: border-box;
     background-color: #3e97b5;
 }
@@ -49,21 +49,26 @@
 
 .user-img {
     width: 90%;
-    height: 70%;
+    height: 300px;
     overflow: hidden;
     margin-bottom: 10px;
-    background-position: center;
-    background-size: cover;
     border-radius: 5%;
+        opacity: 1;
+
+    transition: all 0.3s ease;
 }
+
 
 .user-img img {
     width: 100%;
     height: auto;
-    object-fit: cover;
-    background-position: center;
+    object-fit: cover; /* تغطي العنصر بدون تشويه */
+    object-position: center; /* هاد بيخلي الصورة في الوسط */
 }
-
+.user-img img:hover{
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
 .box-content {
     width: 100%;
     height: 85%;
@@ -117,14 +122,12 @@
     justify-content: start;
 }
 .personal-info .user-name{
-    line-spacing: 0;
     margin: 0;
     margin-bottom: 10px;
     text-align: left;
 }
 
 .personal-info .user-company{
-    line-spacing: 0;
     margin: 0;
     margin-bottom: 10px;
     text-align: left;
@@ -216,7 +219,7 @@ height: 100%;
 }
 .user-status:hover{
     cursor: pointer;
-    background-color: #093b60;
+    background-color: #093b60 !important;
     transition: all 0.3s ease-in-out;
 }
 
@@ -243,4 +246,120 @@ height: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
     transform: scale(1.05);
+}
+
+.simulate-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #3e97b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px 0 0 0;
+    padding: 10px;
+        transition: all 0.3s ease;
+
+}
+
+.simulate-error:hover{
+    background-color: #093b60;
+    transition: all 0.3s ease;
+}
+
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575px) {
+    .Broker-page {
+        width: 100vw;
+        height: auto;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        align-items: flex-start;
+    }
+    .box-content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    .user-img{
+        width: 70%;
+        height: auto;
+        aspect-ratio: 1;
+
+    }
+    .status-indicator{
+        font-size: 1em;
+    }
+    .user-status{
+        width: 90%;
+    }
+
+    .left{
+        padding: 2%;
+        border-bottom: 1px  solid #ccc ;
+        border-right: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    aspect-ratio: 1;
+    }
+    .broker-box {
+        width: 98%;
+        min-height: 95vh;
+    }
+    
+    .box-header {
+        padding: 15px 5%;
+        height: 70px;
+    }
+    
+    .personal-info .user-name {
+        font-size: 1.5rem;
+    }
+    
+    .personal-info .user-company {
+        font-size: 1rem;
+    }
+    
+    .title {
+        font-size: 1.3rem;
+    }
+    
+    .body {
+        font-size: 0.9rem;
+    }
+    
+   
+    
+    .simulate-error {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+        max-width: 150px;
+    }
+    
+    .card {
+        padding: 10px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .contact-info .email{
+        width: 100%;
+    }
+    .contact-info .phone-number{
+        width: 100%;
+    }
 }
