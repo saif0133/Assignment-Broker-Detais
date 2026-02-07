@@ -33,7 +33,7 @@ http://localhost:5173
 ---
 
 ## Project Structure
-
+```bash
 src/
 │
 ├── api/
@@ -58,7 +58,7 @@ src/
 ├── main.tsx                  # App entry point & routing
 ├── index.css
 └── App.css
-
+```
 ## Features
 Broker Details Page
 
